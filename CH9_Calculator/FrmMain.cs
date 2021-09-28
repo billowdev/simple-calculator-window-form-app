@@ -30,6 +30,7 @@ namespace CH9_Calculator
             btnRoot.Enabled = false;
             btnPow.Enabled = false;
             btnMod.Enabled = false;
+            btnSign.Enabled = false;
             // Set property Cursor to Hand
             btn0.Cursor = Cursors.Hand;
             btn1.Cursor = Cursors.Hand;
