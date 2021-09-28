@@ -45,7 +45,7 @@ namespace CH9_Calculator
             this.btn2 = new System.Windows.Forms.Button();
             this.btn5 = new System.Windows.Forms.Button();
             this.btn8 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPow = new System.Windows.Forms.Button();
             this.btnSign = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.btn4 = new System.Windows.Forms.Button();
@@ -55,12 +55,13 @@ namespace CH9_Calculator
             this.btnC = new System.Windows.Forms.Button();
             this.btnCE = new System.Windows.Forms.Button();
             this.btnMod = new System.Windows.Forms.Button();
+            this.txtRawNum = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtNum
             // 
             this.txtNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNum.Location = new System.Drawing.Point(12, 23);
+            this.txtNum.Location = new System.Drawing.Point(12, 12);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(353, 64);
             this.txtNum.TabIndex = 0;
@@ -76,6 +77,7 @@ namespace CH9_Calculator
             this.btnEqual.TabIndex = 26;
             this.btnEqual.Text = "=";
             this.btnEqual.UseVisualStyleBackColor = true;
+            this.btnEqual.Click += new System.EventHandler(this.btnEqual_Click);
             // 
             // btnAdd
             // 
@@ -86,6 +88,7 @@ namespace CH9_Calculator
             this.btnAdd.TabIndex = 24;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSub
             // 
@@ -96,6 +99,7 @@ namespace CH9_Calculator
             this.btnSub.TabIndex = 23;
             this.btnSub.Text = "-";
             this.btnSub.UseVisualStyleBackColor = true;
+            this.btnSub.Click += new System.EventHandler(this.btnSub_Click);
             // 
             // btnMul
             // 
@@ -106,6 +110,7 @@ namespace CH9_Calculator
             this.btnMul.TabIndex = 22;
             this.btnMul.Text = "X";
             this.btnMul.UseVisualStyleBackColor = true;
+            this.btnMul.Click += new System.EventHandler(this.btnMul_Click);
             // 
             // btnDivide
             // 
@@ -116,6 +121,7 @@ namespace CH9_Calculator
             this.btnDivide.TabIndex = 21;
             this.btnDivide.Text = "/";
             this.btnDivide.UseVisualStyleBackColor = true;
+            this.btnDivide.Click += new System.EventHandler(this.btnDivide_Click);
             // 
             // button15
             // 
@@ -137,6 +143,7 @@ namespace CH9_Calculator
             this.btn3.TabIndex = 19;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = true;
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
             // btn6
             // 
@@ -147,6 +154,7 @@ namespace CH9_Calculator
             this.btn6.TabIndex = 18;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = true;
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
             // 
             // btn9
             // 
@@ -157,6 +165,7 @@ namespace CH9_Calculator
             this.btn9.TabIndex = 17;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = true;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
             // 
             // btnRoot
             // 
@@ -177,6 +186,7 @@ namespace CH9_Calculator
             this.btn0.TabIndex = 25;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = true;
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
             // 
             // btn2
             // 
@@ -187,6 +197,7 @@ namespace CH9_Calculator
             this.btn2.TabIndex = 15;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = true;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn5
             // 
@@ -197,6 +208,7 @@ namespace CH9_Calculator
             this.btn5.TabIndex = 14;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = true;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
             // btn8
             // 
@@ -207,16 +219,18 @@ namespace CH9_Calculator
             this.btn8.TabIndex = 13;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = true;
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
             // 
-            // button1
+            // btnPow
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(100, 184);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 55);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "x^2";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPow.Location = new System.Drawing.Point(100, 184);
+            this.btnPow.Name = "btnPow";
+            this.btnPow.Size = new System.Drawing.Size(85, 55);
+            this.btnPow.TabIndex = 12;
+            this.btnPow.Text = "x^2";
+            this.btnPow.UseVisualStyleBackColor = true;
+            this.btnPow.Click += new System.EventHandler(this.btnPow_Click);
             // 
             // btnSign
             // 
@@ -237,6 +251,7 @@ namespace CH9_Calculator
             this.btn1.TabIndex = 10;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = true;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // btn4
             // 
@@ -247,6 +262,7 @@ namespace CH9_Calculator
             this.btn4.TabIndex = 9;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
             // btn7
             // 
@@ -257,6 +273,7 @@ namespace CH9_Calculator
             this.btn7.TabIndex = 8;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = true;
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
             // 
             // btn1Divx
             // 
@@ -287,6 +304,7 @@ namespace CH9_Calculator
             this.btnC.TabIndex = 4;
             this.btnC.Text = "C";
             this.btnC.UseVisualStyleBackColor = true;
+            this.btnC.Click += new System.EventHandler(this.btnC_Click);
             // 
             // btnCE
             // 
@@ -297,6 +315,7 @@ namespace CH9_Calculator
             this.btnCE.TabIndex = 6;
             this.btnCE.Text = "CE";
             this.btnCE.UseVisualStyleBackColor = true;
+            this.btnCE.Click += new System.EventHandler(this.btnCE_Click);
             // 
             // btnMod
             // 
@@ -308,11 +327,21 @@ namespace CH9_Calculator
             this.btnMod.Text = "%";
             this.btnMod.UseVisualStyleBackColor = true;
             // 
+            // txtRawNum
+            // 
+            this.txtRawNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRawNum.Location = new System.Drawing.Point(12, 82);
+            this.txtRawNum.Name = "txtRawNum";
+            this.txtRawNum.Size = new System.Drawing.Size(348, 30);
+            this.txtRawNum.TabIndex = 27;
+            this.txtRawNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 485);
+            this.Controls.Add(this.txtRawNum);
             this.Controls.Add(this.btnEqual);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSub);
@@ -327,7 +356,7 @@ namespace CH9_Calculator
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn5);
             this.Controls.Add(this.btn8);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPow);
             this.Controls.Add(this.btnSign);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btn4);
@@ -365,7 +394,7 @@ namespace CH9_Calculator
         private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn5;
         private System.Windows.Forms.Button btn8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPow;
         private System.Windows.Forms.Button btnSign;
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn4;
@@ -375,6 +404,7 @@ namespace CH9_Calculator
         private System.Windows.Forms.Button btnC;
         private System.Windows.Forms.Button btnCE;
         private System.Windows.Forms.Button btnMod;
+        private System.Windows.Forms.TextBox txtRawNum;
     }
 }
 
