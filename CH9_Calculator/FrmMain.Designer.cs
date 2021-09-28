@@ -36,7 +36,7 @@ namespace CH9_Calculator
             this.btnSub = new System.Windows.Forms.Button();
             this.btnMul = new System.Windows.Forms.Button();
             this.btnDivide = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.btnPoint = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
             this.btn6 = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
@@ -123,16 +123,17 @@ namespace CH9_Calculator
             this.btnDivide.UseVisualStyleBackColor = true;
             this.btnDivide.Click += new System.EventHandler(this.btnDivide_Click);
             // 
-            // button15
+            // btnPoint
             // 
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(190, 424);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(85, 55);
-            this.button15.TabIndex = 20;
-            this.button15.Text = ".";
-            this.button15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button15.UseVisualStyleBackColor = true;
+            this.btnPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPoint.Location = new System.Drawing.Point(190, 424);
+            this.btnPoint.Name = "btnPoint";
+            this.btnPoint.Size = new System.Drawing.Size(85, 55);
+            this.btnPoint.TabIndex = 20;
+            this.btnPoint.Text = ".";
+            this.btnPoint.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPoint.UseVisualStyleBackColor = true;
+            this.btnPoint.Click += new System.EventHandler(this.btnPoint_Click);
             // 
             // btn3
             // 
@@ -294,6 +295,7 @@ namespace CH9_Calculator
             this.btnDel.TabIndex = 5;
             this.btnDel.Text = "⌫";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnC
             // 
@@ -326,6 +328,7 @@ namespace CH9_Calculator
             this.btnMod.TabIndex = 3;
             this.btnMod.Text = "%";
             this.btnMod.UseVisualStyleBackColor = true;
+            this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
             // 
             // txtRawNum
             // 
@@ -340,6 +343,7 @@ namespace CH9_Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(372, 485);
             this.Controls.Add(this.txtRawNum);
             this.Controls.Add(this.btnEqual);
@@ -347,7 +351,7 @@ namespace CH9_Calculator
             this.Controls.Add(this.btnSub);
             this.Controls.Add(this.btnMul);
             this.Controls.Add(this.btnDivide);
-            this.Controls.Add(this.button15);
+            this.Controls.Add(this.btnPoint);
             this.Controls.Add(this.btn3);
             this.Controls.Add(this.btn6);
             this.Controls.Add(this.btn9);
@@ -385,7 +389,7 @@ namespace CH9_Calculator
         private System.Windows.Forms.Button btnSub;
         private System.Windows.Forms.Button btnMul;
         private System.Windows.Forms.Button btnDivide;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button btnPoint;
         private System.Windows.Forms.Button btn3;
         private System.Windows.Forms.Button btn6;
         private System.Windows.Forms.Button btn9;

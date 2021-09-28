@@ -20,9 +20,15 @@ namespace CH9_Calculator
         string n1 = "";
         string n2 = "";
         string opr = "";
+        private int lastCharacterPosition;
+
         private void FrmMain_Load(object sender, EventArgs e)
         {
             txtNum.Clear();
+            btn1Divx.Enabled = false;
+            btnRoot.Enabled = false;
+            btnPow.Enabled = false;
+            btnMod.Enabled = false;
         }
         private void btn0_Click(object sender, EventArgs e)
         {
@@ -155,6 +161,18 @@ namespace CH9_Calculator
             }
         }
 
+        private void btnPoint_Click(object sender, EventArgs e)
+        {
+            if (opr == "")
+            {
+                txtNum.Text += ".";
+            }
+            else
+            {
+                txtNum.Text += ".";
+                n2 = txtNum.Text;
+            }
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (opr == "")
@@ -222,15 +240,30 @@ namespace CH9_Calculator
             {
                 txtRawNum.Text = n1 + opr + txtNum.Text;
                 txtNum.Text = "";
-
+            }
+        }
+        private void btnMod_Click(object sender, EventArgs e)
+        {
+            if (opr == "")
+            {
+                opr = "%";
+                n1 = txtNum.Text;
+                txtRawNum.Text = n1 + opr;
+                txtNum.Text = "";
+                txtNum.Focus();
+            }
+            else
+            {
+                txtRawNum.Text = n1 + opr + txtNum.Text;
+                txtNum.Text = "";
             }
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
 
-            Int32 num1 = Convert.ToInt32(n1);
-            Int32 num2 = Convert.ToInt32(txtNum.Text);
+            Double num1 = Convert.ToDouble(n1);
+            Double num2 = Convert.ToDouble(txtNum.Text);
             try
             {
                 if (opr == "+")
@@ -255,6 +288,10 @@ namespace CH9_Calculator
                 {
                     txtNum.Text = Convert.ToString(Math.Pow(num1, num2));
                 }
+                if (opr == "%")
+                {
+                    txtNum.Text = Convert.ToString((num1 % num2));
+                }
             }
             catch (FormatException)
             {
@@ -262,7 +299,7 @@ namespace CH9_Calculator
             }
         }
 
-        public double Add(Int32 op1, Int32 op2)
+        public double Add(Double op1, Double op2)
         {
             double sum = Convert.ToDouble(op1 + op2);
             n1 = "";
@@ -270,7 +307,7 @@ namespace CH9_Calculator
             opr = "";
             return sum;
         }
-        public double Sub(Int32 op1, Int32 op2)
+        public double Sub(Double op1, Double op2)
         {
             double res = Convert.ToDouble(op1 - op2);
             n1 = "";
@@ -279,7 +316,7 @@ namespace CH9_Calculator
             return res;
         }
 
-        public double Mul(Int32 op1, Int32 op2)
+        public double Mul(Double op1, Double op2)
         {
             double res = Convert.ToDouble(op1 * op2);
             n1 = "";
@@ -289,9 +326,9 @@ namespace CH9_Calculator
 
         }
 
-        public double Div(Int32 op1, Int32 op2)
+        public double Div(Double op1, Double op2)
         {
-            double res = Convert.ToDouble(op1 / op2);
+            double res = op1 / op2;
             n1 = "";
             n2 = "";
             opr = "";
@@ -328,5 +365,18 @@ namespace CH9_Calculator
             txtNum.Text = "";
         }
 
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+            txtNum.Text = txtNum.Text.Remove(lastCharacterPosition, 1);
+
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Error", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
     }
 }
