@@ -1,0 +1,10 @@
+C:\Users\lacakp\Documents\GitHub\SimpleCalculator\CH9_Calculator\bin\Debug\CH9_Calculator.exe.config
+C:\Users\lacakp\Documents\GitHub\SimpleCalculator\CH9_Calculator\bin\Debug\CH9_Calculator.exe
+C:\Users\lacakp\Documents\GitHub\SimpleCalculator\CH9_Calculator\bin\Debug\CH9_Calculator.pdb
+C:\Users\lacakp\Documents\GitHub\SimpleCalculator\CH9_Calculator\obj\Debug\CH9_Calculator.csproj.AssemblyReference.cache
+C:\Users\lacakp\Documents\GitHub\SimpleCalculator\CH9_Calculator\obj\Debug\CH9_Calculator.FrmMain.resources
+C:\Users\lacakp\Documents\GitHub\SimpleCalculator\CH9_Calculator\obj\Debug\CH9_Calculator.Properties.Resources.resources
+C:\Users\lacakp\Documents\GitHub\SimpleCalculator\CH9_Calculator\obj\Debug\CH9_Calculator.csproj.GenerateResource.cache
+C:\Users\lacakp\Documents\GitHub\SimpleCalculator\CH9_Calculator\obj\Debug\CH9_Calculator.csproj.CoreCompileInputs.cache
+C:\Users\lacakp\Documents\GitHub\SimpleCalculator\CH9_Calculator\obj\Debug\CH9_Calculator.exe
+C:\Users\lacakp\Documents\GitHub\SimpleCalculator\CH9_Calculator\obj\Debug\CH9_Calculator.pdb

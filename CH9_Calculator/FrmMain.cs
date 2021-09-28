@@ -16,10 +16,15 @@ namespace CH9_Calculator
         {
             InitializeComponent();
         }
+        
+
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
 
         }
+
+ 
+
     }
 }
