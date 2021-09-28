@@ -25,10 +25,32 @@ namespace CH9_Calculator
         private void FrmMain_Load(object sender, EventArgs e)
         {
             txtNum.Clear();
+
             btn1Divx.Enabled = false;
             btnRoot.Enabled = false;
             btnPow.Enabled = false;
             btnMod.Enabled = false;
+            // Set property Cursor to Hand
+            btn0.Cursor = Cursors.Hand;
+            btn1.Cursor = Cursors.Hand;
+            btn2.Cursor = Cursors.Hand;
+            btn3.Cursor = Cursors.Hand;
+            btn4.Cursor = Cursors.Hand;
+            btn5.Cursor = Cursors.Hand;
+            btn6.Cursor = Cursors.Hand;
+            btn7.Cursor = Cursors.Hand;
+            btn8.Cursor = Cursors.Hand;
+            btn9.Cursor = Cursors.Hand;
+            btnAdd.Cursor = Cursors.Hand;
+            btnSub.Cursor = Cursors.Hand;
+            btnMul.Cursor = Cursors.Hand;
+            btnDivide.Cursor = Cursors.Hand;
+            btnEqual.Cursor = Cursors.Hand;
+            btnDel.Cursor = Cursors.Hand;
+            btnSign.Cursor = Cursors.Hand;
+            btnPoint.Cursor = Cursors.Hand;
+            btnCE.Cursor = Cursors.Hand;
+            btnC.Cursor = Cursors.Hand;
         }
         private void btn0_Click(object sender, EventArgs e)
         {

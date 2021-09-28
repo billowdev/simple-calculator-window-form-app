@@ -321,6 +321,7 @@ namespace CH9_Calculator
             // 
             // btnMod
             // 
+            this.btnMod.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMod.Location = new System.Drawing.Point(10, 124);
             this.btnMod.Name = "btnMod";
