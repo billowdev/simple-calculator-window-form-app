@@ -132,6 +132,12 @@ namespace CH9_Calculator
             createOpr("%");
         }
 
+        // power button
+        private void btnPow_Click(object sender, EventArgs e)
+        {
+            createOpr("pow");
+        }
+
         private void btnEqual_Click(object sender, EventArgs e)
         {
 
@@ -159,21 +165,18 @@ namespace CH9_Calculator
                 }
                 if (opr == "pow")
                 {
-                    txtNum.Text = Convert.ToString(Math.Pow(num1, num2));
+                    txtNum.Text = Convert.ToString(myPow(num1, num2));
                 }
                 if (opr == "%")
                 {
                     txtNum.Text = Convert.ToString((num1 % num2));
                 }
             }
-            catch (FormatException)
+            catch
             {
-                txtNum.Text = "Error";
+                txtNum.Text = "error try again";
+                throw;
             }
-
-            n1 = "";
-            n2 = "";
-            txtRawNum.Text = "";
         }
         // Function Add return sum
         public double Add(Double op1, Double op2)
@@ -213,11 +216,17 @@ namespace CH9_Calculator
             return res;
         }
 
-        // power button
-        private void btnPow_Click(object sender, EventArgs e)
+        public double myPow(double op1, Double op2)
         {
-            createOpr("pow");
+            double res = Math.Pow(op1, op2);
+            n1 = "";
+            n2 = "";
+            opr = "";
+            return res;
+
+
         }
+
         // Clear Function
         private void btnC_Click(object sender, EventArgs e)
         {
@@ -242,8 +251,10 @@ namespace CH9_Calculator
             }
             catch (ArgumentOutOfRangeException)
             {
-                MessageBox.Show("Error", "Error", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                txtNum.Text = "";
+                txtRawNum.Text = "";
+                n1 = "";
+                n2 = "";
             }
         }
         // return Number Button 0-9 ( n2 )
