@@ -28,7 +28,7 @@ namespace CH9_Calculator
 
             btn1Divx.Enabled = false;
             btnRoot.Enabled = false;
-            btnPow.Enabled = false;
+            //btnPow.Enabled = false;
             btnMod.Enabled = false;
             btnSign.Enabled = false;
             btnCE.Enabled = false;
@@ -110,88 +110,26 @@ namespace CH9_Calculator
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                opr = "+";
-                n1 = txtNum.Text;
-                txtRawNum.Text = n1 + opr;
-                txtNum.Text = "";
-                txtNum.Focus();
-            }
-            else
-            {
-                txtRawNum.Text = n1 + opr + txtNum.Text;
-                txtNum.Text = "";
-            }
+            createOpr("+");
         }
 
         private void btnSub_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                opr = "-";
-                n1 = txtNum.Text;
-                txtRawNum.Text = n1 + opr;
-                txtNum.Text = "";
-                txtNum.Focus();
-            }
-            else
-            {
-                txtRawNum.Text = n1 + opr + txtNum.Text;
-                txtNum.Text = "";
-
-            }
+            createOpr("-");
         }
 
         private void btnMul_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                opr = "*";
-                n1 = txtNum.Text;
-                txtRawNum.Text = n1 + opr;
-                txtNum.Text = "";
-                txtNum.Focus();
-            }
-            else
-            {
-                txtRawNum.Text = n1 + opr + txtNum.Text;
-                txtNum.Text = "";
-
-            }
+            createOpr("*");
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                opr = "/";
-                n1 = txtNum.Text;
-                txtRawNum.Text = n1 + opr;
-                txtNum.Text = "";
-                txtNum.Focus();
-            }
-            else
-            {
-                txtRawNum.Text = n1 + opr + txtNum.Text;
-                txtNum.Text = "";
-            }
+            createOpr("/");
         }
         private void btnMod_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                opr = "%";
-                n1 = txtNum.Text;
-                txtRawNum.Text = n1 + opr;
-                txtNum.Text = "";
-                txtNum.Focus();
-            }
-            else
-            {
-                txtRawNum.Text = n1 + opr + txtNum.Text;
-                txtNum.Text = "";
-            }
+            createOpr("%");
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
@@ -232,8 +170,12 @@ namespace CH9_Calculator
             {
                 txtNum.Text = "Error";
             }
-        }
 
+            n1 = "";
+            n2 = "";
+            txtRawNum.Text = "";
+        }
+        // Function Add return sum
         public double Add(Double op1, Double op2)
         {
             double sum = Convert.ToDouble(op1 + op2);
@@ -242,6 +184,7 @@ namespace CH9_Calculator
             opr = "";
             return sum;
         }
+        // Function Sub return res
         public double Sub(Double op1, Double op2)
         {
             double res = Convert.ToDouble(op1 - op2);
@@ -250,7 +193,7 @@ namespace CH9_Calculator
             opr = "";
             return res;
         }
-
+        // Function Multiply return res
         public double Mul(Double op1, Double op2)
         {
             double res = Convert.ToDouble(op1 * op2);
@@ -260,7 +203,7 @@ namespace CH9_Calculator
             return res;
 
         }
-
+        //  Function Divide return res
         public double Div(Double op1, Double op2)
         {
             double res = op1 / op2;
@@ -273,33 +216,23 @@ namespace CH9_Calculator
         // power button
         private void btnPow_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                opr = "pow";
-                n1 = txtNum.Text;
-                txtRawNum.Text = n1 + opr;
-                txtNum.Text = "";
-                txtNum.Focus();
-            }
-            else
-            {
-                txtRawNum.Text = n1 + opr + txtNum.Text;
-                txtNum.Text = "";
-
-            }
+            createOpr("pow");
         }
         // Clear Function
         private void btnC_Click(object sender, EventArgs e)
         {
             txtRawNum.Text = "";
             txtNum.Text = "";
+            n1 = "";
+            n2 = "";
         }
-
+        // Function CE for clear txtNum.Text
         private void btnCE_Click(object sender, EventArgs e)
         {
             txtNum.Text = "";
         }
 
+        // Function delete last charactor in txtNum.Text
         private void btnDel_Click(object sender, EventArgs e)
         {
             try
@@ -313,7 +246,7 @@ namespace CH9_Calculator
                     MessageBoxIcon.Error);
             }
         }
-        // ปุ่มตัวเลข
+        // return Number Button 0-9 ( n2 )
         private string createBTN(string myBtn, string myOpr)
         {
             if (opr == myOpr)
@@ -326,6 +259,26 @@ namespace CH9_Calculator
                 n2 = txtNum.Text;
             }
             return n2;
+        }
+
+        // return n1 
+        private string createOpr(string myOpr)
+        {
+         
+            if (opr == "")
+            {
+                opr = myOpr;
+                n1 = txtNum.Text;
+                txtRawNum.Text = n1 + opr;
+                txtNum.Text = "";
+                txtNum.Focus();
+            }
+            else
+            {
+                txtRawNum.Text = n1 + opr + txtNum.Text;
+                txtNum.Text = "";
+            }
+            return n1;
         }
     }
 }
