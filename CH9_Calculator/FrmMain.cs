@@ -55,15 +55,16 @@ namespace CH9_Calculator
         }
         private void btn0_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "0";
-            }
-            else
-            {
-                txtNum.Text += "0";
-                n2 = txtNum.Text;
-            }
+            //if (opr == "")
+            //{
+            //    txtNum.Text += "0";
+            //}
+            //else
+            //{
+            //    txtNum.Text += "0";
+            //    n2 = txtNum.Text;
+            //}
+            createBTN("0", opr);
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -400,6 +401,20 @@ namespace CH9_Calculator
                 MessageBox.Show("Error", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private string createBTN(string myBtn, string myOpr)
+        {
+            if (opr == myOpr)
+            {
+                txtNum.Text += myBtn;
+            }
+            else
+            {
+                txtNum.Text += myBtn;
+                n2 = txtNum.Text;
+            }
+            return n2;
         }
     }
 }
