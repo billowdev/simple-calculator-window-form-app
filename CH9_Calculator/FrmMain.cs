@@ -28,9 +28,10 @@ namespace CH9_Calculator
 
             btn1Divx.Enabled = false;
             btnRoot.Enabled = false;
-            btnPow.Enabled = false;
+            //btnPow.Enabled = false;
             btnMod.Enabled = false;
             btnSign.Enabled = false;
+            btnCE.Enabled = false;
             // Set property Cursor to Hand
             btn0.Cursor = Cursors.Hand;
             btn1.Cursor = Cursors.Hand;
@@ -55,231 +56,86 @@ namespace CH9_Calculator
         }
         private void btn0_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "0";
-            }
-            else
-            {
-                txtNum.Text += "0";
-                n2 = txtNum.Text;
-            }
+            createBTN("0", opr);
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "1";
-            }
-            else
-            {
-                txtNum.Text += "1";
-                n2 = txtNum.Text;
-            }
+            createBTN("1", opr);
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "2";
-            }
-            else
-            {
-                txtNum.Text += "2";
-                n2 = txtNum.Text;
-            }
+            createBTN("2", opr);
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "3";
-            }
-            else
-            {
-                txtNum.Text += "3";
-                n2 = txtNum.Text;
-            }
+            createBTN("3", opr);
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "4";
-            }
-            else
-            {
-                txtNum.Text += "4";
-                n2 = txtNum.Text;
-            }
+            createBTN("4", opr);
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "5";
-            }
-            else
-            {
-                txtNum.Text += "5";
-                n2 = txtNum.Text;
-            }
+            createBTN("5", opr);
         }
 
         private void btn6_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "6";
-            }
-            else
-            {
-                txtNum.Text += "6";
-                n2 = txtNum.Text;
-            }
+            createBTN("6", opr);
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "7";
-            }
-            else
-            {
-                txtNum.Text += "7";
-                n2 = txtNum.Text;
-            }
+            createBTN("7", opr);
         }
 
         private void btn8_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "8";
-            }
-            else
-            {
-                txtNum.Text += "8";
-                n2 = txtNum.Text;
-
-            }
+            createBTN("8", opr);
         }
 
         private void btn9_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "9";
-            }
-            else
-            {
-                txtNum.Text += "9";
-                n2 = txtNum.Text;
-            }
+            createBTN("9", opr);
         }
 
         private void btnPoint_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += ".";
-            }
-            else
-            {
-                txtNum.Text += ".";
-                n2 = txtNum.Text;
-            }
+            createBTN(".", opr);
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                opr = "+";
-                n1 = txtNum.Text;
-                txtRawNum.Text = n1 + opr;
-                txtNum.Text = "";
-                txtNum.Focus();
-            }
-            else
-            {
-                txtRawNum.Text = n1 + opr + txtNum.Text;
-                txtNum.Text = "";
-            }
+            createOpr("+");
         }
 
         private void btnSub_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                opr = "-";
-                n1 = txtNum.Text;
-                txtRawNum.Text = n1 + opr;
-                txtNum.Text = "";
-                txtNum.Focus();
-            }
-            else
-            {
-                txtRawNum.Text = n1 + opr + txtNum.Text;
-                txtNum.Text = "";
-
-            }
+            createOpr("-");
         }
 
         private void btnMul_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                opr = "*";
-                n1 = txtNum.Text;
-                txtRawNum.Text = n1 + opr;
-                txtNum.Text = "";
-                txtNum.Focus();
-            }
-            else
-            {
-                txtRawNum.Text = n1 + opr + txtNum.Text;
-                txtNum.Text = "";
-
-            }
+            createOpr("*");
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                opr = "/";
-                n1 = txtNum.Text;
-                txtRawNum.Text = n1 + opr;
-                txtNum.Text = "";
-                txtNum.Focus();
-            }
-            else
-            {
-                txtRawNum.Text = n1 + opr + txtNum.Text;
-                txtNum.Text = "";
-            }
+            createOpr("/");
         }
         private void btnMod_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                opr = "%";
-                n1 = txtNum.Text;
-                txtRawNum.Text = n1 + opr;
-                txtNum.Text = "";
-                txtNum.Focus();
-            }
-            else
-            {
-                txtRawNum.Text = n1 + opr + txtNum.Text;
-                txtNum.Text = "";
-            }
+            createOpr("%");
+        }
+
+        // power button
+        private void btnPow_Click(object sender, EventArgs e)
+        {
+            createOpr("pow");
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
@@ -309,19 +165,20 @@ namespace CH9_Calculator
                 }
                 if (opr == "pow")
                 {
-                    txtNum.Text = Convert.ToString(Math.Pow(num1, num2));
+                    txtNum.Text = Convert.ToString(myPow(num1, num2));
                 }
                 if (opr == "%")
                 {
                     txtNum.Text = Convert.ToString((num1 % num2));
                 }
             }
-            catch (FormatException)
+            catch
             {
-                txtNum.Text = "Error";
+                txtNum.Text = "error try again";
+                throw;
             }
         }
-
+        // Function Add return sum
         public double Add(Double op1, Double op2)
         {
             double sum = Convert.ToDouble(op1 + op2);
@@ -330,6 +187,7 @@ namespace CH9_Calculator
             opr = "";
             return sum;
         }
+        // Function Sub return res
         public double Sub(Double op1, Double op2)
         {
             double res = Convert.ToDouble(op1 - op2);
@@ -338,7 +196,7 @@ namespace CH9_Calculator
             opr = "";
             return res;
         }
-
+        // Function Multiply return res
         public double Mul(Double op1, Double op2)
         {
             double res = Convert.ToDouble(op1 * op2);
@@ -348,7 +206,7 @@ namespace CH9_Calculator
             return res;
 
         }
-
+        //  Function Divide return res
         public double Div(Double op1, Double op2)
         {
             double res = op1 / op2;
@@ -358,36 +216,32 @@ namespace CH9_Calculator
             return res;
         }
 
-        // power button
-        private void btnPow_Click(object sender, EventArgs e)
+        public double myPow(double op1, Double op2)
         {
-            if (opr == "")
-            {
-                opr = "pow";
-                n1 = txtNum.Text;
-                txtRawNum.Text = n1 + opr;
-                txtNum.Text = "";
-                txtNum.Focus();
-            }
-            else
-            {
-                txtRawNum.Text = n1 + opr + txtNum.Text;
-                txtNum.Text = "";
+            double res = Math.Pow(op1, op2);
+            n1 = "";
+            n2 = "";
+            opr = "";
+            return res;
 
-            }
+
         }
+
         // Clear Function
         private void btnC_Click(object sender, EventArgs e)
         {
             txtRawNum.Text = "";
             txtNum.Text = "";
+            n1 = "";
+            n2 = "";
         }
-
+        // Function CE for clear txtNum.Text
         private void btnCE_Click(object sender, EventArgs e)
         {
             txtNum.Text = "";
         }
 
+        // Function delete last charactor in txtNum.Text
         private void btnDel_Click(object sender, EventArgs e)
         {
             try
@@ -397,9 +251,45 @@ namespace CH9_Calculator
             }
             catch (ArgumentOutOfRangeException)
             {
-                MessageBox.Show("Error", "Error", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                txtNum.Text = "";
+                txtRawNum.Text = "";
+                n1 = "";
+                n2 = "";
             }
+        }
+        // return Number Button 0-9 ( n2 )
+        private string createBTN(string myBtn, string myOpr)
+        {
+            if (opr == myOpr)
+            {
+                txtNum.Text += myBtn;
+            }
+            else
+            {
+                txtNum.Text += myBtn;
+                n2 = txtNum.Text;
+            }
+            return n2;
+        }
+
+        // return n1 
+        private string createOpr(string myOpr)
+        {
+         
+            if (opr == "")
+            {
+                opr = myOpr;
+                n1 = txtNum.Text;
+                txtRawNum.Text = n1 + opr;
+                txtNum.Text = "";
+                txtNum.Focus();
+            }
+            else
+            {
+                txtRawNum.Text = n1 + opr + txtNum.Text;
+                txtNum.Text = "";
+            }
+            return n1;
         }
     }
 }
