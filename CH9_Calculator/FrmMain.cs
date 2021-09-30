@@ -31,6 +31,7 @@ namespace CH9_Calculator
             btnPow.Enabled = false;
             btnMod.Enabled = false;
             btnSign.Enabled = false;
+            btnCE.Enabled = false;
             // Set property Cursor to Hand
             btn0.Cursor = Cursors.Hand;
             btn1.Cursor = Cursors.Hand;
@@ -55,147 +56,57 @@ namespace CH9_Calculator
         }
         private void btn0_Click(object sender, EventArgs e)
         {
-            //if (opr == "")
-            //{
-            //    txtNum.Text += "0";
-            //}
-            //else
-            //{
-            //    txtNum.Text += "0";
-            //    n2 = txtNum.Text;
-            //}
             createBTN("0", opr);
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "1";
-            }
-            else
-            {
-                txtNum.Text += "1";
-                n2 = txtNum.Text;
-            }
+            createBTN("1", opr);
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "2";
-            }
-            else
-            {
-                txtNum.Text += "2";
-                n2 = txtNum.Text;
-            }
+            createBTN("2", opr);
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "3";
-            }
-            else
-            {
-                txtNum.Text += "3";
-                n2 = txtNum.Text;
-            }
+            createBTN("3", opr);
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "4";
-            }
-            else
-            {
-                txtNum.Text += "4";
-                n2 = txtNum.Text;
-            }
+            createBTN("4", opr);
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "5";
-            }
-            else
-            {
-                txtNum.Text += "5";
-                n2 = txtNum.Text;
-            }
+            createBTN("5", opr);
         }
 
         private void btn6_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "6";
-            }
-            else
-            {
-                txtNum.Text += "6";
-                n2 = txtNum.Text;
-            }
+            createBTN("6", opr);
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "7";
-            }
-            else
-            {
-                txtNum.Text += "7";
-                n2 = txtNum.Text;
-            }
+            createBTN("7", opr);
         }
 
         private void btn8_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "8";
-            }
-            else
-            {
-                txtNum.Text += "8";
-                n2 = txtNum.Text;
-
-            }
+            createBTN("8", opr);
         }
 
         private void btn9_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += "9";
-            }
-            else
-            {
-                txtNum.Text += "9";
-                n2 = txtNum.Text;
-            }
+            createBTN("9", opr);
         }
 
         private void btnPoint_Click(object sender, EventArgs e)
         {
-            if (opr == "")
-            {
-                txtNum.Text += ".";
-            }
-            else
-            {
-                txtNum.Text += ".";
-                n2 = txtNum.Text;
-            }
+            createBTN(".", opr);
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -402,7 +313,7 @@ namespace CH9_Calculator
                     MessageBoxIcon.Error);
             }
         }
-
+        // ปุ่มตัวเลข
         private string createBTN(string myBtn, string myOpr)
         {
             if (opr == myOpr)
